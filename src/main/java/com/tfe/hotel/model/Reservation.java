@@ -13,7 +13,7 @@ import java.util.Date;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idreservations")
+    @Column(name = "id_reservations")
     private Integer id;
 
     @NotBlank(message = "Le statut ne doit pas être vide")
@@ -32,12 +32,12 @@ public class Reservation {
     private Date dateFin;
 
     @ManyToOne
-    @JoinColumn(name = "id_user_users")
+    @JoinColumn(name = "id_users")
     @NotNull(message = "L'utilisateur ne doit pas être nul")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "id_chambre_chambres")
+    @JoinColumn(name = "id_chambres")
     @NotNull(message = "La chambre ne doit pas être nulle")
     private Chambre chambre;
 }
